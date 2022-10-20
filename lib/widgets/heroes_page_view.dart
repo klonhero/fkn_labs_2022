@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marvel_app/widgets/hero_card.dart';
 
 class HeroesPageView extends StatelessWidget {
   const HeroesPageView({super.key});
@@ -17,12 +18,8 @@ class HeroesPageView extends StatelessWidget {
             child: PageView(
           controller: controller,
           children: <Widget>[
-            Card(
-                child: Text('1', style: textStyle)
-            ),
-            Card(
-                child: Text('2', style: textStyle)
-            ),
+            const HeroCard(text: '123', asset: 'assets/marvel_logo.png'),
+            Card(child: Text('2', style: textStyle)),
           ],
         )));
   }

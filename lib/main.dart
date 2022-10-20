@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:marvel_app/pages/MainPage.dart';
+import 'package:marvel_app/pages/main_page.dart';
 
 void main() {
   runApp(const MyApp());
