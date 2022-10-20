@@ -25,6 +25,26 @@ class HeroCard extends StatelessWidget {
                 padding: const EdgeInsets.all(20),
                 child: Text(text,
                     style: const TextStyle(
-                        fontSize: 25.0, color: Colors.white)))));
+                        fontSize: 25.0,
+                        color: Colors.white,
+                        shadows: [
+                          Shadow( // bottomLeft
+                              offset: Offset(-1.5, -1.5),
+                              color: Colors.black
+                          ),
+                          Shadow( // bottomRight
+                              offset: Offset(1.5, -1.5),
+                              color: Colors.black
+                          ),
+                          Shadow( // topRight
+                              offset: Offset(1.5, 1.5),
+                              color: Colors.black
+                          ),
+                          Shadow( // topLeft
+                              offset: Offset(-1.5, 1.5),
+                              color: Colors.black
+                          ),
+                        ]
+                    )))));
   }
 }
