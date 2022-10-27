@@ -9,42 +9,55 @@ class HeroCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        color: Colors.transparent,
-        elevation: 5,
-        margin: const EdgeInsets.all(30),
-        child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15.0),
-              image: DecorationImage(
-                image: AssetImage(asset),
-                fit: BoxFit.fill,
+      elevation: 0,
+      color: Colors.transparent,
+      margin: const EdgeInsets.only(bottom: 30),
+      child: SizedBox(
+        child: Stack(
+          children: <Widget>[
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30.0),
+                child: Image(
+                  image: AssetImage(asset),
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
-            child: Container(
+            Align(
                 alignment: Alignment.bottomCenter,
-                padding: const EdgeInsets.all(20),
-                child: Text(text,
-                    style: const TextStyle(
-                        fontSize: 25.0,
-                        color: Colors.white,
-                        shadows: [
-                          Shadow( // bottomLeft
-                              offset: Offset(-1.5, -1.5),
-                              color: Colors.black
-                          ),
-                          Shadow( // bottomRight
-                              offset: Offset(1.5, -1.5),
-                              color: Colors.black
-                          ),
-                          Shadow( // topRight
-                              offset: Offset(1.5, 1.5),
-                              color: Colors.black
-                          ),
-                          Shadow( // topLeft
-                              offset: Offset(-1.5, 1.5),
-                              color: Colors.black
-                          ),
-                        ]
-                    )))));
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 30.0),
+                  child: FittedBox(
+                    fit: BoxFit.fill,
+                    child: Text(text,
+                        style: const TextStyle(
+                            fontSize: 25.0,
+                            color: Colors.white,
+                            shadows: [
+                              Shadow(
+                                  // bottomLeft
+                                  offset: Offset(-1.5, -1.5),
+                                  color: Colors.black),
+                              Shadow(
+                                  // bottomRight
+                                  offset: Offset(1.5, -1.5),
+                                  color: Colors.black),
+                              Shadow(
+                                  // topRight
+                                  offset: Offset(1.5, 1.5),
+                                  color: Colors.black),
+                              Shadow(
+                                  // topLeft
+                                  offset: Offset(-1.5, 1.5),
+                                  color: Colors.black),
+                            ])),
+                  ),
+                )),
+          ],
+        ),
+      ),
+    );
   }
 }

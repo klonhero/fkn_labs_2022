@@ -6,16 +6,14 @@ import '../list_of_heroes.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            centerTitle: true,
-            title: const MarvelLogo(),
-            backgroundColor: Colors.transparent),
         backgroundColor: Colors.black87,
         body: Column(children: const <Widget>[
-          Expanded(flex: 1, child: UnderLogoText()),
+          Expanded(flex: 2, child: MarvelLogo()),
+          Expanded(flex: 3, child: UnderLogoText()),
           Expanded(flex: 10, child: HeroesCarouselSlider(heroes: heroes))
         ]));
   }

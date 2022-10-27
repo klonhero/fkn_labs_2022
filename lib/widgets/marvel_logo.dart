@@ -5,11 +5,16 @@ class MarvelLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Transform.scale(
-        alignment: Alignment.center,
-        scaleY: 0.3,
-        scaleX: 0.4,
-        child: const Image(
-            image: AssetImage('assets/marvel_logo.png'), fit: BoxFit.contain));
+    return const FittedBox(
+      fit: BoxFit.fill,
+      child: Padding(
+        padding: EdgeInsets.only(top: 30.0),
+        child: Align(
+            alignment: Alignment.center,
+            child: Image(
+                image: AssetImage('assets/marvel_logo.png'),
+            )),
+      ),
+    );
   }
 }
