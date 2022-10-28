@@ -5,8 +5,8 @@ class MarvelLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const FittedBox(
-      fit: BoxFit.fill,
+    return const SizedBox(
+      width: 250.0,
       child: Padding(
         padding: EdgeInsets.only(top: 30.0),
         child: Align(

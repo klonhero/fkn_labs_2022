@@ -11,10 +11,11 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.black87,
-        body: Column(children: const <Widget>[
-          Expanded(flex: 2, child: MarvelLogo()),
-          Expanded(flex: 3, child: UnderLogoText()),
-          Expanded(flex: 10, child: HeroesCarouselSlider(heroes: heroes))
-        ]));
+        body: SafeArea(
+            child: Column(children: const <Widget>[
+          MarvelLogo(),
+          UnderLogoText(),
+          Expanded(child: HeroesCarouselSlider(heroes: heroesData))
+        ])));
   }
 }

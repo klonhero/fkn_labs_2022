@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-class HeroCard extends StatelessWidget {
-  final String text;
-  final String asset;
+import '../list_of_heroes.dart';
 
-  const HeroCard({super.key, required this.text, required this.asset});
+class HeroCard extends StatelessWidget {
+  final HeroData data;
+
+  const HeroCard({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class HeroCard extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(30.0),
                 child: Image(
-                  image: AssetImage(asset),
+                  image: AssetImage(data.asset),
                   fit: BoxFit.fill,
                 ),
               ),
@@ -31,7 +32,7 @@ class HeroCard extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 30.0),
                   child: FittedBox(
                     fit: BoxFit.fill,
-                    child: Text(text,
+                    child: Text(data.text,
                         style: const TextStyle(
                             fontSize: 25.0,
                             color: Colors.white,
