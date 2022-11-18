@@ -48,7 +48,6 @@ class HeroDetailed extends StatelessWidget {
                     fit: BoxFit.contain,
                     child: Column(
                       children: <Widget>[
-                        Text(data.name, style: textStyle),
                         Text(data.description, style: textStyle)
                       ],
                     ),
