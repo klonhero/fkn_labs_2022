@@ -11,11 +11,7 @@ class HeroDetailed extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle textStyle = TextStyle(
-        fontSize: 25.0,
-        color: Colors.white,
-        fontWeight: FontWeight.bold,
-        shadows: shadows);
+    textStyle;
     return Scaffold(
         backgroundColor: Colors.black87,
         body: Stack(children: <Widget>[

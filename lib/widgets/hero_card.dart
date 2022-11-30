@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../list_of_heroes.dart';
+import 'const_styles.dart';
 import 'hero_detail_screen.dart';
 
 class HeroCard extends StatelessWidget {
@@ -42,28 +43,7 @@ class HeroCard extends StatelessWidget {
                         child: FittedBox(
                           fit: BoxFit.fill,
                           child: Text(data.name,
-                              style: const TextStyle(
-                                  fontSize: 25.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  shadows: [
-                                    Shadow(
-                                        // bottomLeft
-                                        offset: Offset(-1.5, -1.5),
-                                        color: Colors.black),
-                                    Shadow(
-                                        // bottomRight
-                                        offset: Offset(1.5, -1.5),
-                                        color: Colors.black),
-                                    Shadow(
-                                        // topRight
-                                        offset: Offset(1.5, 1.5),
-                                        color: Colors.black),
-                                    Shadow(
-                                        // topLeft
-                                        offset: Offset(-1.5, 1.5),
-                                        color: Colors.black),
-                                  ])),
+                              style: textStyle),
                         ),
                       )),
                 ],
