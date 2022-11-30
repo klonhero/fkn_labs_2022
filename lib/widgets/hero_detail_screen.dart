@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:marvel_app/widgets/const_styles.dart';
 
 import '../list_of_heroes.dart';
 
@@ -10,36 +11,18 @@ class HeroDetailed extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle textStyle = const TextStyle(
+    TextStyle textStyle = TextStyle(
         fontSize: 25.0,
         color: Colors.white,
         fontWeight: FontWeight.bold,
-        shadows: [
-          Shadow(
-              // bottomLeft
-              offset: Offset(-1.5, -1.5),
-              color: Colors.black),
-          Shadow(
-              // bottomRight
-              offset: Offset(1.5, -1.5),
-              color: Colors.black),
-          Shadow(
-              // topRight
-              offset: Offset(1.5, 1.5),
-              color: Colors.black),
-          Shadow(
-              // topLeft
-              offset: Offset(-1.5, 1.5),
-              color: Colors.black),
-        ]);
-
+        shadows: shadows);
     return Scaffold(
         backgroundColor: Colors.black87,
         body: Stack(children: <Widget>[
           Positioned.fill(
-              child: Image(
-            image: AssetImage(data.asset),
-            fit: BoxFit.cover,
+              child: Image.network(
+            data.image,
+                fit: BoxFit.cover,
           )),
           Align(alignment: Alignment.bottomCenter,
               child: Padding(
@@ -56,31 +39,7 @@ class HeroDetailed extends StatelessWidget {
               padding: const EdgeInsets.only(top: 30.0, left: 30.0),
               child: Align(
                   alignment: Alignment.topLeft,
-                  child: GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: const Icon(CupertinoIcons.arrow_left,
-                          size: 60.0,
-                          color: Colors.white,
-                          shadows: [
-                            Shadow(
-                                // bottomLeft
-                                offset: Offset(-1.5, -1.5),
-                                color: Colors.black87),
-                            Shadow(
-                                // bottomRight
-                                offset: Offset(1.5, -1.5),
-                                color: Colors.black87),
-                            Shadow(
-                                // topRight
-                                offset: Offset(1.5, 1.5),
-                                color: Colors.black87),
-                            Shadow(
-                                // topLeft
-                                offset: Offset(-1.5, 1.5),
-                                color: Colors.black87),
-                          ]))))
+                  child: BackButton(color: Colors.white, onPressed:() => Navigator.pop(context),)))
         ]));
   }
 }

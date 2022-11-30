@@ -16,6 +16,6 @@ class HeroesCarouselSlider extends StatelessWidget {
           return HeroCard(data: heroes[itemIndex]);
         },
         options: CarouselOptions(
-            height: 500, enlargeCenterPage: true, enableInfiniteScroll: true));
+            height: 600, enlargeCenterPage: true, enableInfiniteScroll: true));
   }
 }
