@@ -1,8 +1,4 @@
-import 'dart:ui';
-
-import 'package:marvel_app/widgets/hero_card.dart';
-
-const heroesData = [
+List<HeroData> emergencyHeroesData = [
   HeroData(name: 'Spider Man', image:"https://i.imgur.com/jWcD9gg.jpg", description: 'I am Spider Man'),
   HeroData(name: 'Captain America', image: 'https://avatars.dzeninfra.ru/get-zen_doc/3362051/pub_60013155cad2204d6ea26890_6001329b4e913f175878c941/scale_1200', description: 'I am Captain America'),
   HeroData(name: 'Deadpool', image: 'https://i.pinimg.com/736x/5a/29/df/5a29dfa287f409194e96b0a0984bd3ef.jpg', description: 'I am Deadpool'),
@@ -15,9 +11,9 @@ const heroesData = [
 class HeroData {
   final String name;
   final String image;
-  final String description;
+  late final String description;
 
-  const HeroData(
+  HeroData(
       {required this.name,
       required this.image,
       required this.description});
