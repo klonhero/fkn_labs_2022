@@ -29,7 +29,7 @@ class HeroCard extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(30.0),
                       child: Image.network(
-                        width: 300,
+                        width: 400,
                         height: 1200,
                         data.image,
                         fit: BoxFit.fill,
@@ -37,15 +37,16 @@ class HeroCard extends StatelessWidget {
                     ),
                   ),
                   Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Padding(
-                        padding: const EdgeInsets.only(bottom: 30.0),
-                        child: FittedBox(
-                          fit: BoxFit.fill,
-                          child: Text(data.name,
-                              style: textStyle),
-                        ),
-                      )),
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 30.0),
+                      child: Text(
+                        data.name,
+                        style: textStyle,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             )));
