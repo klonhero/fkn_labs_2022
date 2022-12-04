@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marvel_app/widgets/const_styles.dart';
 
 class UnderLogoText extends StatelessWidget {
   const UnderLogoText({super.key});
@@ -11,10 +12,7 @@ class UnderLogoText extends StatelessWidget {
           fit: BoxFit.fill,
           child: Text(
             'Choose your hero',
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 25.0,
-                fontWeight: FontWeight.bold),
+            style: textStyle,
             textAlign: TextAlign.center,
           ),
         ));
